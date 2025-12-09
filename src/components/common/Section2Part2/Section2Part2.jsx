@@ -2,6 +2,7 @@ import React from 'react'
 import image1 from "../../../../public/image1.svg"
 import image2 from "../../../../public/image2.svg"
 import image3 from "../../../../public/image3.svg"
+import { Link } from 'react-router-dom'
 
 
 const Section2Part2 = () => {
@@ -32,8 +33,8 @@ const Section2Part2 = () => {
           <p className='text-sm md:text-base text-gray-700 leading-relaxed mb-6 grow'>
             تعمل شركة اللؤلؤ الحديث لصناعة المنظفات على توفير منتجات عالية الجودة تواكب احتياجات السوق وتلبي توقعات العملاء من حيث الكفاءة، التنوع، والسعر المناسب، مع الالتزام بمعايير السلامة والابتكار المستمر في تطوير منتجات جديدة.
           </p>
-          
-          <button className='w-full border border-gray-300 rounded-md py-3 px-4 flex items-center justify-center gap-2 text-gray-700 hover:bg-gray-50 font-medium transition-colors'>
+          <Link to={'/homecleaningproducts'}>
+          <button className='cursor-pointer w-full border border-gray-300 rounded-md py-3 px-4 flex items-center justify-center gap-2 text-gray-700 hover:bg-primary-500 hover:text-white font-medium transition-colors'>
             <svg 
               className='w-5 h-5' 
               fill='none' 
@@ -49,6 +50,7 @@ const Section2Part2 = () => {
             </svg>
             <span>قراءة المزيد</span>
           </button>
+          </Link>
         </div>
       </div>
 
@@ -69,8 +71,8 @@ const Section2Part2 = () => {
           <p className='text-sm md:text-base text-gray-700 leading-relaxed mb-6 grow'>
             تقدم شركة اللؤلؤ الحديث لصناعة المنظفات خدمة تصميم تركيبات خاصة تمكن العملاء من الحصول على منتجات حصرية بجودة عالية مع مرونة التعديل والتطوير وفق احتياجاتهم للتميز في السوقية والإنتاجية.
           </p>
-          
-          <button className='w-full border border-gray-300 rounded-md py-3 px-4 flex items-center justify-center gap-2 text-gray-700 hover:bg-gray-50 font-medium transition-colors'>
+          <Link to={'/innovativeformulations'}>
+          <button className='cursor-pointer w-full border border-gray-300 rounded-md py-3 px-4 flex items-center justify-center gap-2 text-gray-700 hover:bg-primary-500 hover:text-white font-medium transition-colors'>
             <svg 
               className='w-5 h-5' 
               fill='none' 
@@ -86,6 +88,7 @@ const Section2Part2 = () => {
             </svg>
             <span>قراءة المزيد</span>
           </button>
+          </Link>
         </div>
       </div>
 
@@ -106,8 +109,8 @@ const Section2Part2 = () => {
           <p className='text-sm md:text-base text-gray-700 leading-relaxed mb-6 grow'>
             تقدم شركة اللؤلؤ الحديث لصناعة المنظفات خدمة Private Label لتمكين العملاء من إطلاق علاماتهم الخاصة بجودة احترافية من خلال تصنيع منتجات متخصصة مع دعم كامل في مراحل التعبئة والتغليف والتصدير.
           </p>
-          
-          <button className='w-full border border-gray-300 rounded-md py-3 px-4 flex items-center justify-center gap-2 text-gray-700 hover:bg-gray-50 font-medium transition-colors'>
+          <Link to={'/privatelabelservices'}>
+          <button className='cursor-pointer w-full border border-gray-300 rounded-md py-3 px-4 flex items-center justify-center gap-2 text-gray-700 hover:bg-primary-500 hover:text-white font-medium transition-colors'>
             <svg 
               className='w-5 h-5' 
               fill='none' 
@@ -123,6 +126,7 @@ const Section2Part2 = () => {
             </svg>
             <span>قراءة المزيد</span>
           </button>
+          </Link>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { IoLogoWhatsapp } from 'react-icons/io'
 import { MdMailOutline } from 'react-icons/md'
 import { HiOutlineChevronLeft } from "react-icons/hi";
 import logoFooter from '../../../public/logoFooter.svg'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -37,7 +38,7 @@ const Footer = () => {
     {/* روابط سريعة */}
     {/* روابط سريعة */}
 <div className="flex flex-col gap-4 items-center text-center md:text-right">
-  <h2 className="text-2xl font-bold mb-4">روابط سريعة</h2>
+  <h2 className="text-2xl ps-10 font-bold mb-4">روابط سريعة</h2>
 
   <div className="flex flex-col gap-2 text-xl w-full max-w-[200px]">
     <div className="flex items-center justify-end gap-1 transition duration-200 ease-in-out hover:text-primary-400 hover:scale-105 cursor-pointer">
@@ -56,12 +57,12 @@ const Footer = () => {
     </div>
 
     <div className="flex items-center justify-end gap-1 transition duration-200 ease-in-out hover:text-primary-400 hover:scale-105 cursor-pointer">
-      <h3>سياسة الخصوصية</h3>
+      <Link to={'/moreinfo'}><h3>سياسة الخصوصية</h3></Link>
       <HiOutlineChevronLeft />
     </div>
 
     <div className="flex items-center justify-end gap-1 transition duration-200 ease-in-out hover:text-primary-400 hover:scale-105 cursor-pointer">
-      <h3>الشروط و الأحكام</h3>
+      <Link to={'/termsandconditions'}><h3>الشروط و الأحكام</h3></Link>
       <HiOutlineChevronLeft />
     </div>
   </div>

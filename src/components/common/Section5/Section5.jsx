@@ -49,20 +49,23 @@ const Section5 = () => {
         h-auto md:h-[220px] 
         p-6'
     >
-        <h2 className='text-5xl text-secondary-yellow-500 font-bold text-center md:text-right'>
+        <h2 className='lg:text-5xl text-[20px] text-secondary-yellow-500 font-bold text-center md:text-right'>
             تواصل معنا
         </h2>
 
-        <p className='py-5 text-2xl text-center md:text-right'>
+        <p className='py-5 lg:text-2xl text-[20px] text-center md:text-right'>
             تريد أن تتواصل معنا؟ راسلنا على واتساب أو راسلنا على البريد الالكتروني
         </p>
 
-        <div className='flex flex-col md:flex-row items-center gap-3'>
-            <GrLocation className='w-[40px] h-[48px] text-secondary-yellow-500' />
-            <p className='text-2xl text-center md:text-right'>
-                ابو علنده , عمان ,الاردن
-            </p>
-        </div>
+       <div className='flex  flex-col md:flex-row items-center md:items-start gap-3 md:gap-4 w-full'>
+    <GrLocation className='lg:w-[40px] lg:h-[48px] w-[30px] h-[28px] text-secondary-yellow-500' />
+
+    <p className='lg:text-2xl text-[20px] text-center md:text-right flex-1'>
+        ابو علنده , عمان , الاردن
+    </p>
+</div>
+
+
     </div>
 
 </div>

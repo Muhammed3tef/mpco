@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { HiChevronDown, HiMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -7,6 +7,20 @@ import MPCOLogo from "../../../public/MPCOLogo.svg";
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [openMobile, setOpenMobile] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // إغلاق الدروب داون لما تضغط خارجها
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpenDropdown(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="w-full bg-white shadow-sm p-3 fixed top-0 left-0 z-50">
@@ -21,29 +35,28 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-10 text-lg font-medium">
 
-          <li><Link>تواصل معنا</Link></li>
-          <li><Link to='/aboutus'>من نحن</Link></li>
+          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md"><Link to={'/contactus'}>تواصل معنا</Link></li>
+          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md"><Link to='/aboutus'>من نحن</Link></li>
 
           {/* Dropdown (Desktop Only) */}
-          <li
-            className="relative"
-            onMouseEnter={() => setOpenDropdown(true)}
-            onMouseLeave={() => setOpenDropdown(false)}
-          >
-            <div className="flex items-center gap-1 cursor-pointer">
-              الخدمات <HiChevronDown />
+          <li className="relative hover:bg-primary-200 transition-all  rounded-md" ref={dropdownRef}>
+            <div
+              className="flex items-center gap-1 cursor-pointer px-1 py-1 rounded-lg transition-all duration-300"
+              onClick={() => setOpenDropdown(!openDropdown)}
+            >
+              الخدمات <HiChevronDown className={`transition-transform duration-300 ${openDropdown ? "rotate-180" : ""}`} />
             </div>
 
             {openDropdown && (
-              <div className="absolute right-0 bg-white shadow-lg rounded-md mt-2 w-40 text-right py-2 animate-fadeIn">
-                <Link className="block px-4 py-2 hover:bg-gray-100">منتجات الغسيل</Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100">منتجات التنظيف</Link>
-                <Link className="block px-4 py-2 hover:bg-gray-100">منتجات المنزل</Link>
+              <div className="absolute right-0 mt-2 w-52 bg-[#105b89] text-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 text-right">
+                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/privatelabelservices'}>خدمات التعبئة والتغليف للغير (Private Label)</Link>
+                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/innovativeformulations'}>تطوير تركيبات مبتكرة</Link>
+                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/homecleaningproducts'}>تصنيع المنظفات المنزلية</Link>
               </div>
             )}
           </li>
 
-          <li><Link>الرئيسة</Link></li>
+          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md"><Link to="/">الرئيسة</Link></li>
         </ul>
 
         {/* Logo */}
@@ -61,34 +74,33 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {/* Mobile Menu */}
-{openMobile && (
-  <div className="md:hidden bg-white shadow-inner mt-3 rounded p-4 text-right space-y-4 text-lg">
+      {openMobile && (
+        <div className="md:hidden bg-white shadow-inner mt-3 rounded p-4 text-right space-y-4 text-lg">
 
-    <Link className="block">تواصل معنا</Link>
-    <Link className="block" to='/aboutus'>من نحن</Link>
-    <Link className="block" to="/">الرئيسة</Link>
+          <Link className="block hover:bg-primary-200 transition-all px-1 py-1 rounded-md" to={'/contactus'}>تواصل معنا</Link>
+          <Link className="block" to='/aboutus'>من نحن</Link>
+          <Link className="block" to="/">الرئيسة</Link>
 
-    {/* Mobile Dropdown — aligned right */}
-    <div className="mt-2">
-      <div
-        className="flex items-center gap-1 cursor-pointer pb-2 justify-end"
-        onClick={() => setOpenDropdown(!openDropdown)}
-      >
-        الخدمات <HiChevronDown />
-      </div>
+          {/* Mobile Dropdown — aligned right */}
+          <div className="mt-2" ref={dropdownRef}>
+            <div
+              className="flex items-center gap-1 cursor-pointer pb-2 justify-end p-2 rounded-lg transition-all duration-300"
+              onClick={() => setOpenDropdown(!openDropdown)}
+            >
+              الخدمات <HiChevronDown className={`transition-transform duration-300 ${openDropdown ? "rotate-180" : ""}`} />
+            </div>
 
-      {openDropdown && (
-        <div className="mt-2 space-y-2 pr-4 text-gray-700">
-          <Link className="block">منتجات الغسيل</Link>
-          <Link className="block">منتجات التنظيف</Link>
-          <Link className="block">منتجات المنزل</Link>
+            {openDropdown && (
+              <div className="absolute right-0 mt-2 w-52 bg-[#105b89] text-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 text-right">
+                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/privatelabelservices'}>خدمات التعبئة والتغليف للغير (Private Label)</Link>
+                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/innovativeformulations'}>تطوير تركيبات مبتكرة</Link>
+                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/homecleaningproducts'}>تصنيع المنظفات المنزلية</Link>
+              </div>
+            )}
+          </div>
+
         </div>
       )}
-    </div>
-
-  </div>
-)}
 
     </nav>
   );
