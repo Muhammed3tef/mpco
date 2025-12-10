@@ -6,7 +6,7 @@ import { HiOutlineChevronLeft } from "react-icons/hi";
 import logoFooter from '../../../public/logoFooter.svg'
 import { Link } from 'react-router-dom';
 
-const Footer = () => {
+const Footer =  () => {
   return (
    <div className="w-full bg-primary-500 text-white px-6 py-12">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-10">
@@ -47,7 +47,7 @@ const Footer = () => {
     </div>
 
     <div className="flex items-center justify-end gap-1 transition duration-200 ease-in-out hover:text-primary-400 hover:scale-105 cursor-pointer">
-      <h3>الكتالوج</h3>
+      <a target='_blank' href="https://heyzine.com/flip-book/11a82c540a.html"><h3>الكتالوج</h3></a>
       <HiOutlineChevronLeft />
     </div>
 
