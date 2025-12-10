@@ -7,7 +7,7 @@ import Layout from "./Layout/Layout";
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home/Home"));
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
-const PrivatbelServices = lazy(() => import("./pages/Privatelabelservices/Privatelabelservices"));
+const PrivatbelServices = lazy(() => import("./pages/PrivateLabelServices/PrivateLabelServices"));
 const InnovativeFormulations = lazy(() => import("./pages/InnovativeFormulations/InnovativeFormulations"));
 const HomeCleaningProducts = lazy(() => import("./pages/HomeCleaningProducts/HomeCleaningProducts"));
 const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"));
