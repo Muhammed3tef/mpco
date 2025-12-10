@@ -7,7 +7,7 @@ import Layout from "./Layout/Layout";
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home/Home"));
 const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
-const PrivatbelServices = lazy(() => import("./pages/privatelabelservices/privatelabelservices"));
+const PrivatbelServices = lazy(() => import("./pages/Privatelabelservices/Privatelabelservices"));
 const InnovativeFormulations = lazy(() => import("./pages/InnovativeFormulations/InnovativeFormulations"));
 const HomeCleaningProducts = lazy(() => import("./pages/HomeCleaningProducts/HomeCleaningProducts"));
 const ContactUs = lazy(() => import("./pages/ContactUs/ContactUs"));
@@ -17,7 +17,7 @@ const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions/TermsAn
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Suspense fallback={<Load />}><Layout /></Suspense>,
     children: [
       { path: "/", element: <Home /> },
       { path: "/aboutus", element: <AboutUs /> },
@@ -33,10 +33,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Suspense fallback={<Load />}>
+    
       <RouterProvider router={router} />
-    </Suspense>
-    // <Load/>
+    
+
   );
 }
 
