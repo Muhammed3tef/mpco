@@ -15,12 +15,12 @@ const Section2Part1 = () => {
       </div>
       
       <div className='w-full h-[195px] bg-secondary-100 rounded-xl border border-secondary-400 flex items-center justify-center gap-3 p-4'>
-        <h2 className='text-secondary-700 text-xl md:text-2xl font-medium'>المصداقية</h2>
+        <h2 className='text-secondary-700 text-xl md:text-2xl font-medium'>الكفاءة</h2>
         <span><img src={filled} alt="المصداقية" className='w-12 h-12 md:w-16 md:h-16' /></span>
       </div>
       
       <div className='w-full h-[195px] bg-secondary-yellow-50 rounded-xl border border-secondary-yellow-400 flex items-center justify-center gap-3 p-4'>
-        <h2 className='text-secondary-yellow-400 text-xl md:text-2xl font-medium'>المصداقية</h2>
+        <h2 className='text-secondary-yellow-400 text-xl md:text-2xl font-medium'>الخبرة</h2>
         <span><img src={filled2} alt="المصداقية" className='w-12 h-12 md:w-16 md:h-16' /></span>
       </div>
       
