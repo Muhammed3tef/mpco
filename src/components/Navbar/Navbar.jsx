@@ -9,7 +9,7 @@ export default function Navbar() {
   const [openMobile, setOpenMobile] = useState(false);
   const dropdownRef = useRef(null);
 
-  // إغلاق الدروب داون لما تضغط خارجها
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {

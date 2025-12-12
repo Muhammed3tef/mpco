@@ -11,7 +11,7 @@ const Footer =  () => {
    <div className="w-full bg-primary-500 text-white px-6 py-12">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-10">
 
-    {/* تواصل معنا */}
+  
     <div className="flex flex-col gap-4 text-center md:text-right">
       <h2 className="text-2xl font-bold mb-4">تواصل معنا</h2>
 
@@ -35,14 +35,13 @@ const Footer =  () => {
       </div>
     </div>
 
-    {/* روابط سريعة */}
-    {/* روابط سريعة */}
+
 <div className="flex flex-col gap-4 items-center text-center md:text-right">
   <h2 className="text-2xl ps-10 font-bold mb-4">روابط سريعة</h2>
 
   <div className="flex flex-col gap-2 text-xl w-full max-w-[200px]">
     <div className="flex items-center justify-end gap-1 transition duration-200 ease-in-out hover:text-primary-400 hover:scale-105 cursor-pointer">
-      <h3>الرئيسية</h3>
+      <Link to="/"><h3>الرئيسية</h3></Link>
       <HiOutlineChevronLeft />
     </div>
 
@@ -52,7 +51,7 @@ const Footer =  () => {
     </div>
 
     <div className="flex items-center justify-end gap-1 transition duration-200 ease-in-out hover:text-primary-400 hover:scale-105 cursor-pointer">
-      <h3>اتصل بنا</h3>
+      <Link to="/contactus"><h3>اتصل بنا</h3></Link>
       <HiOutlineChevronLeft />
     </div>
 
@@ -72,7 +71,7 @@ const Footer =  () => {
 
 
 
-    {/* اللوجو + النص */}
+    
     <div className="flex flex-col items-center md:items-end gap-4 text-center md:text-right">
       <img src={logoFooter} className="w-[180px]" alt="Logo" />
       <p className="text-xl leading-relaxed max-w-[260px]">
@@ -82,7 +81,7 @@ const Footer =  () => {
 
   </div>
 
-  {/* خط تحت + حقوق */}
+ 
   <div className="w-full border-t border-white/20 mt-10 pt-4">
     <p className="text-center text-sm opacity-80">
       جميع الحقوق محفوظة © 2025 شركة اللؤلؤ الحديث

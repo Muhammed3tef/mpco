@@ -9,7 +9,7 @@ const ContactUs = () => {
 
       <div className='flex flex-col md:flex-row w-full max-w-[1150px]'>
 
-        {/* الكارت الشمال */}
+        
         <div className='bg-secondary-yellow-500 rounded-t-xl md:rounded-t-none md:rounded-l-xl shadow-xl w-full md:w-[354px] h-auto md:h-[220px] flex flex-col justify-center items-center p-4 md:p-6'>
           <h2 className='text-base md:text-2xl font-bold py-1 md:py-2'>انقر للعرض</h2>
 
@@ -30,7 +30,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        {/* الكارت اليمين */}
+      
         <div className='bg-white khdmat rounded-b-xl md:rounded-b-none md:rounded-r-xl shadow-xl w-full md:w-[793px] h-auto md:h-[220px] p-4 md:p-6'>
           <h2 className='text-lg md:text-5xl text-secondary-yellow-500 font-bold text-center md:text-right'>
             تواصل معنا

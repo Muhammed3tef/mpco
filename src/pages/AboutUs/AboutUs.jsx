@@ -13,7 +13,7 @@ import image1 from "../../../public/image1.svg"; // عدّل المسار حسب
 
   <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-    {/* النص */}
+
     <p className="text-[18px] md:text-[22px] leading-relaxed flex-1">
  شركة اللؤلؤ الحديث لصناعة المنظفات هي شركة متخصصة في إنتاج وتصنيع جميع أنواع المنظفات
         السائلة والصلبة عالية الجودة، بما يشمل منتجات العناية الشخصية، العناية بالشعر، مسحوق الغسيل،
@@ -24,7 +24,7 @@ import image1 from "../../../public/image1.svg"; // عدّل المسار حسب
         احتياجات السوق المحلي وأسواق التصدير. كما نلتزم بتطوير منتجاتنا بشكل مستمر لضمان رضا العملاء
         وتعزيز ثقتهم.    </p>
 
-    {/* الصورة */}
+   
     <div className="flex justify-center lg:justify-end flex-1">
       <img
         src={image1}
@@ -37,10 +37,10 @@ import image1 from "../../../public/image1.svg"; // عدّل المسار حسب
 </div>
 
 
-  {/* =======================  الكروت الأربعة  ======================= */}
+  
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-    {/* رؤيتنا */}
+   
     <div className="rounded-xl p-6 shadow-md bg-white w-full">
       <div className="flex items-center gap-2 text-orange-500 font-bold text-xl mb-3">
         <Eye size={32} />
@@ -52,7 +52,7 @@ import image1 from "../../../public/image1.svg"; // عدّل المسار حسب
       </p>
     </div>
 
-    {/* رسالتنا */}
+   
     <div className="rounded-xl p-6 shadow-md bg-white w-full">
       <div className="flex items-center gap-2 text-orange-500 font-bold text-xl mb-3">
         <ScrollText size={32} />
@@ -63,7 +63,7 @@ import image1 from "../../../public/image1.svg"; // عدّل المسار حسب
       </p>
     </div>
 
-    {/* هدفنا */}
+   
     <div className="rounded-xl p-6 shadow-md bg-white w-full">
       <div className="flex items-center gap-2 text-orange-500 font-bold text-xl mb-3">
         <Target size={32} />
@@ -81,7 +81,7 @@ import image1 from "../../../public/image1.svg"; // عدّل المسار حسب
       </p>
     </div>
 
-    {/* قيمنا */}
+   
     <div className="rounded-xl p-6 shadow-md bg-white w-full">
       <div className="flex items-center gap-2 text-orange-500 font-bold text-xl mb-3">
         <CheckCircle size={32} />

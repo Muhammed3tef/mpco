@@ -13,7 +13,7 @@ const Section5 = () => {
     gap-0 md:gap-0'
 >
 
-    {/* الكارت الشمال */}
+  
     <div className='bg-secondary-yellow-500 
         rounded-t-xl md:rounded-t-none md:rounded-l-xl 
         shadow-xl 
@@ -41,7 +41,7 @@ const Section5 = () => {
         </div>
     </div>
 
-    {/* الكارت اليمين */}
+
     <div className='bg-white khdmat 
         rounded-b-xl md:rounded-b-none md:rounded-r-xl 
         shadow-xl 
