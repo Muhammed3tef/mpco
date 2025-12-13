@@ -9,6 +9,10 @@ export default function Navbar() {
   const [openMobile, setOpenMobile] = useState(false);
   const dropdownRef = useRef(null);
 
+  const closeMobileMenu = () => {
+    setOpenMobile(false);
+    setOpenDropdown(false);
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -35,28 +39,58 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-10 text-lg font-medium">
 
-          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md"><Link to={'/contactus'}>تواصل معنا</Link></li>
-          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md"><Link to='/aboutus'>من نحن</Link></li>
+          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md">
+            <Link to="/contactus">تواصل معنا</Link>
+          </li>
+
+          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md">
+            <Link to="/aboutus">من نحن</Link>
+          </li>
 
           {/* Dropdown (Desktop Only) */}
-          <li className="relative hover:bg-primary-200 transition-all  rounded-md" ref={dropdownRef}>
+          <li
+            className="relative hover:bg-primary-200 transition-all rounded-md"
+            ref={dropdownRef}
+          >
             <div
               className="flex items-center gap-1 cursor-pointer px-1 py-1 rounded-lg transition-all duration-300"
               onClick={() => setOpenDropdown(!openDropdown)}
             >
-              الخدمات <HiChevronDown className={`transition-transform duration-300 ${openDropdown ? "rotate-180" : ""}`} />
+              الخدمات
+              <HiChevronDown
+                className={`transition-transform duration-300 ${
+                  openDropdown ? "rotate-180" : ""
+                }`}
+              />
             </div>
 
             {openDropdown && (
-              <div className="absolute right-0 mt-2 w-52 bg-[#105b89] text-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 text-right">
-                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/privatelabelservices'}>خدمات التعبئة والتغليف للغير (Private Label)</Link>
-                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/innovativeformulations'}>تطوير تركيبات مبتكرة</Link>
-                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/homecleaningproducts'}>تصنيع المنظفات المنزلية</Link>
+              <div className="absolute right-0 mt-2 w-52 bg-[#105b89] text-white shadow-lg rounded-2xl overflow-hidden text-right">
+                <Link
+                  className="block px-5 py-3 hover:bg-neutral-50 hover:text-black"
+                  to="/privatelabelservices"
+                >
+                  خدمات التعبئة والتغليف للغير (Private Label)
+                </Link>
+                <Link
+                  className="block px-5 py-3 hover:bg-neutral-50 hover:text-black"
+                  to="/innovativeformulations"
+                >
+                  تطوير تركيبات مبتكرة
+                </Link>
+                <Link
+                  className="block px-5 py-3 hover:bg-neutral-50 hover:text-black"
+                  to="/homecleaningproducts"
+                >
+                  تصنيع المنظفات المنزلية
+                </Link>
               </div>
             )}
           </li>
 
-          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md"><Link to="/">الرئيسة</Link></li>
+          <li className="hover:bg-primary-200 transition-all px-1 py-1 rounded-md">
+            <Link to="/">الرئيسة</Link>
+          </li>
         </ul>
 
         {/* Logo */}
@@ -66,7 +100,7 @@ export default function Navbar() {
 
         {/* Mobile Icon */}
         <button
-          className="md:hidden text-3xl"
+          className="md:hidden text-3xl cursor-pointer"
           onClick={() => setOpenMobile(!openMobile)}
         >
           <HiMenu />
@@ -77,31 +111,73 @@ export default function Navbar() {
       {openMobile && (
         <div className="md:hidden bg-white shadow-inner mt-3 rounded p-4 text-right space-y-4 text-lg">
 
-          <Link className="block hover:bg-primary-200 transition-all px-1 py-1 rounded-md" to={'/contactus'}>تواصل معنا</Link>
-          <Link className="block" to='/aboutus'>من نحن</Link>
-          <Link className="block" to="/">الرئيسة</Link>
+          <Link
+            to="/contactus"
+            onClick={closeMobileMenu}
+            className="block hover:bg-primary-200 transition-all px-1 py-1 rounded-md"
+          >
+            تواصل معنا
+          </Link>
 
-          {/* Mobile Dropdown — aligned right */}
+          <Link
+            to="/aboutus"
+            onClick={closeMobileMenu}
+            className="block"
+          >
+            من نحن
+          </Link>
+
+          <Link
+            to="/"
+            onClick={closeMobileMenu}
+            className="block"
+          >
+            الرئيسة
+          </Link>
+
+          {/* Mobile Dropdown */}
           <div className="mt-2" ref={dropdownRef}>
             <div
               className="flex items-center gap-1 cursor-pointer pb-2 justify-end p-2 rounded-lg transition-all duration-300"
               onClick={() => setOpenDropdown(!openDropdown)}
             >
-              الخدمات <HiChevronDown className={`transition-transform duration-300 ${openDropdown ? "rotate-180" : ""}`} />
+              الخدمات
+              <HiChevronDown
+                className={`transition-transform duration-300 ${
+                  openDropdown ? "rotate-180" : ""
+                }`}
+              />
             </div>
 
             {openDropdown && (
-              <div className="absolute right-0 mt-2 w-52 bg-[#105b89] text-white shadow-lg rounded-2xl overflow-hidden transition-all duration-300 text-right">
-                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/privatelabelservices'}>خدمات التعبئة والتغليف للغير (Private Label)</Link>
-                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/innovativeformulations'}>تطوير تركيبات مبتكرة</Link>
-                <Link className="block px-5 py-3 transition duration-300 hover:bg-neutral-50 hover:text-black" to={'/homecleaningproducts'}>تصنيع المنظفات المنزلية</Link>
+              <div className="mt-2 bg-[#105b89] text-white shadow-lg rounded-2xl overflow-hidden text-right">
+                <Link
+                  to="/privatelabelservices"
+                  onClick={closeMobileMenu}
+                  className="block px-5 py-3 hover:bg-neutral-50 hover:text-black"
+                >
+                  خدمات التعبئة والتغليف للغير (Private Label)
+                </Link>
+                <Link
+                  to="/innovativeformulations"
+                  onClick={closeMobileMenu}
+                  className="block px-5 py-3 hover:bg-neutral-50 hover:text-black"
+                >
+                  تطوير تركيبات مبتكرة
+                </Link>
+                <Link
+                  to="/homecleaningproducts"
+                  onClick={closeMobileMenu}
+                  className="block px-5 py-3 hover:bg-neutral-50 hover:text-black"
+                >
+                  تصنيع المنظفات المنزلية
+                </Link>
               </div>
             )}
           </div>
 
         </div>
       )}
-
     </nav>
   );
 }
