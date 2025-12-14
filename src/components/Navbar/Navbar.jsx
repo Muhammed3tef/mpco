@@ -122,7 +122,7 @@ export default function Navbar() {
           <Link
             to="/aboutus"
             onClick={closeMobileMenu}
-            className="block"
+            className="block hover:bg-primary-200 transition-all px-1 py-1 rounded-md"
           >
             من نحن
           </Link>
@@ -130,7 +130,7 @@ export default function Navbar() {
           <Link
             to="/"
             onClick={closeMobileMenu}
-            className="block"
+            className="block hover:bg-primary-200 transition-all px-1 py-1 rounded-md"
           >
             الرئيسة
           </Link>
@@ -138,12 +138,12 @@ export default function Navbar() {
           {/* Mobile Dropdown */}
           <div className="mt-2" ref={dropdownRef}>
             <div
-              className="flex items-center gap-1 cursor-pointer pb-2 justify-end p-2 rounded-lg transition-all duration-300"
+              className="flex hover:bg-primary-200 items-center gap-1 cursor-pointer pb-2 justify-end p-2 rounded-lg transition-all duration-300"
               onClick={() => setOpenDropdown(!openDropdown)}
             >
               الخدمات
               <HiChevronDown
-                className={`transition-transform duration-300 ${
+                className={`transition-transform duration-300  ${
                   openDropdown ? "rotate-180" : ""
                 }`}
               />

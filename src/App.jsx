@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Load from "./components/Load/Load";
 import Layout from "./Layout/Layout";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 
 // Lazy load pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Suspense fallback={<Load />}><Layout /></Suspense>,
+    errorElement: <ErrorMessage />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/aboutus", element: <AboutUs /> },
